@@ -5,16 +5,29 @@
     <head>
         <link rel="stylesheet" href="style.css">
     </head>
+    <nav id="navbar">
+        <header>CSS First Steps</header>
+    </nav>
     <main id="main-doc">
         <section class="main-section" id="Getting_started_with_CSS">
             <header>Getting Started With CSS</header>
             <p>In this article we will take a simple HTML document and apply CSS to it, learning some practical things
                 about the language along the way.</p>
-            <p>Prerequisites: Basic computer literacy, basic software installed, basic knowledge of working with
-                files, and HTML basics (study Introduction to HTML.)
-                <br><br>
-                Objective: To understand the basics of linking a CSS document to an HTML file, and be able to do
-                simple text formatting with CSS.</p>
+            <p>Prerequisites:
+                <ul>
+                    <li>Basic computer literacy </li>
+                    <li>basic software installed</li>
+                    <li>basic knowledge of working with
+                        files, and</li>
+                    <li>HTML basics (study Introduction to HTML.)</li>
+                </ul>
+                Objective:
+                <ul>
+                    <li>To understand the basics of linking a CSS document to an HTML file, and </li>
+                    <li>be able to do
+                        simple text formatting with CSS.</li>
+                </ul>
+            </p>
         </section>
         <section class="main-section" id="Starting_with_some_HTML">
             <header>Starting With Some HTML</header>
@@ -50,6 +63,49 @@
         </section>
         <section class="main-section" id="Adding_CSS_to_our_document">
             <header>Adding CSS to our document</header>
+            <p>
+                The very first thing we need to do is to tell the HTML document that we have some CSS rules we want it
+                to
+                use. There are three different ways to apply CSS to an HTML document that you'll commonly come across,
+                however, for now, we will look at the most usual and useful way of doing so — linking CSS from the head
+                of
+                your document.</p>
+
+            <p>Create a file in the same folder as your HTML document and save it as styles.css. The .css extension
+                shows
+                that this is a CSS file.</p>
+
+            <p>To link styles.css to index.html add the following line somewhere inside the
+
+                &lt;head&gt; of the HTML document:</p>
+            <code>
+                <pre>
+                        &lt;link rel="stylesheet" href="styles.css"&gt;
+                    </pre>
+            </code>
+            <p>
+                This
+                &lt;link&gt; element tells the browser that we have a stylesheet, using the rel attribute, and the
+                location of
+                that stylesheet as the value of the href attribute. You can test that the CSS works by adding a rule to
+                styles.css. Using your code editor add the following to your CSS file:
+                <code>
+                    <pre>
+                        h1 {
+                        color: red;
+                        }
+                    </pre>
+                </code>
+            </p>
+            <p>
+                Save your HTML and CSS files and reload the page in a web browser. The level one heading at the top of
+                the document should now be red. If that happens, congratulations — you have successfully applied some
+                CSS to an HTML document. If that doesn't happen, carefully check that you've typed everything correctly.
+                <br><br>
+                You can continue to work in styles.css locally, or you can use our interactive editor below to continue
+                with this tutorial. The interactive editor acts as if the CSS in the first panel is linked to the HTML
+                document, just as we have with our document above.
+            </p>
         </section>
         <section class="main-section" id="Styling_HTML_elements">
             <header>Styling HTML elements</header>
