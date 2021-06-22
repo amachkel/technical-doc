@@ -1,3 +1,18 @@
 body {
-  background-color: aqua;
+  /* background-color: aqua; */
+}
+.main-section {
+  font-size: 28px;
+}
+p {
+  font-size: 18px;
+}
+code {
+  font-size: 18px;
+}
+pre {
+  border: 1px solid #dad8d8;
+  background-color: #dad8d8;
+  margin: 0px 0px 24px;
+  padding: 24px;
 }
