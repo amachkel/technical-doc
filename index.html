@@ -128,7 +128,8 @@
                 Save your HTML and CSS files and reload the page in a web browser. The level one heading at the top of
                 the document should now be red. If that happens, congratulations — you have successfully applied some
                 CSS to an HTML document. If that doesn't happen, carefully check that you've typed everything correctly.
-                <br><br>
+            </p>
+            <p>
                 You can continue to work in styles.css locally, or you can use our interactive editor below to continue
                 with this tutorial. The interactive editor acts as if the CSS in the first panel is linked to the HTML
                 document, just as we have with our document above.
@@ -136,13 +137,147 @@
         </section>
         <section class="main-section" id="Styling_HTML_elements">
             <header>Styling HTML elements</header>
+            <p>
+                By making our heading red we have already demonstrated that we can target and style an HTML element. We
+                do this by targeting an element selector — this is a selector that directly matches an HTML element
+                name. To target all paragraphs in the document you would use the selector p. To turn all paragraphs
+                green you would use:
+            </p>
+            <pre>
+                <code>
+                    p {
+                    color: green;
+                    }
+                </code>
+            </pre>
+            <p>
+                You can target multiple selectors at once, by separating the selectors with a comma. If I want all
+                paragraphs and all list items to be green my rule looks like this:
+            </p>
+            <pre>
+                <code>
+                    p, li {
+                    color: green;
+                    }
+                </code>
+            </pre>
         </section>
         <section class="main-section" id="Changing_the_default_behavior_of_elements">
             <header>Changing the default behavior of elements</header>
-        </section>
-        <section class="main-section" id="Adding_a_class">
-            <header>Adding a class</header>
-        </section>
+            <p>
+                When we look at a well-marked up HTML document, even something as simple as our example, we can see how
+                the browser
+                is making the HTML readable by adding some default styling. Headings are large and bold and our list has
+                bullets.
+                This happens because browsers have internal stylesheets containing default styles, which they apply to
+                all pages by
+                default; without them all of the text would run together in a clump and we would have to style
+                everything from
+                scratch. All modern browsers display HTML content by default in pretty much the same way.
+            </p>
+            <p>
+                However, you will often want something other than the choice the browser has made. This can be done by
+                choosing the
+                HTML element that you want to change, and using a CSS rule to change the way it looks. A good example is
+                our &lt;ul&gt;,
+                an unordered list. It has list bullets, and if I decide I don't want those bullets I can remove them
+                like so:
+            </p>
+            <pre>
+    <code>
+        li {
+        list-style-type: none;
+        }
+    </code>
+</pre>
+            <p>
+                The list-style-type property is a good property to look at on MDN to see which values are supported.
+                Take a look at
+                the page for list-style-type and you will find an interactive example at the top of the page to try some
+                different
+                values in, then all allowable values are detailed further down the page.
+            </p>
+            <p>
+                Looking at that page you will discover that in addition to removing the list bullets you can change them
+                — try changing them to square bullets by using a value of square.
+            </p>
+
+            <section class="main-section" id="Adding_a_class">
+                <header>Adding a class</header>
+                <p>
+                    So far we have styled elements based on their HTML element names. This works as long as you want all
+                    of the elements of that type in your document to look the same. Most of the time that isn't the case
+                    and so you will need to find a way to select a subset of the elements without changing the others.
+                    The most common way to do this is to add a class to your HTML element and target that class.
+                </p>
+                <p>
+                    In your HTML document, add a class attribute to the second list item. Your list will now look like
+                    this:
+                </p>
+                <pre>
+                    <code>
+                        &lt;ul&gt;
+                            &lt;li>Item one&lt;/li&gt;
+                            &lt;li class="special"&gt;Item two&lt;/li&gt;
+                            &lt;li&gt;Item &lt;em&gt;three&lt;/em&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    </code>
+                </pre>
+                <p>
+                    In your CSS you can target the class of special by creating a selector that starts with a full stop
+                    character. Add the following to your CSS file:
+                </p>
+                <pre>
+                    <code>
+                        .special {
+                        color: orange;
+                        font-weight: bold;
+                        }
+                    </code>
+                </pre>
+                <p>
+                    Save and refresh to see what the result is.
+                </p>
+                <p>
+                    You can apply the class of special to any element on your page that you want to have the same look
+                    as this list item. For example, you might want the <span> in the paragraph to also be orange and
+                        bold. Try adding a class of special to it, then reload your page and see what happens.
+                </p>
+                <p>
+                    Sometimes you will see rules with a selector that lists the HTML element selector along with the
+                    class:
+                </p>
+                <pre>
+                    <code>
+                        li.special {
+                        color: orange;
+                        font-weight: bold;
+                        }
+                    </code>
+                </pre>
+                <p>
+                    This syntax means "target any li element that has a class of special". If you were to do this then
+                    you would no longer be able to apply the class to a &lt;span&gt; or another element by adding the
+                    class to
+                    it; you would have to add that element to the list of selectors:
+                </p>
+                <pre>
+                    <code>
+                        li.special,
+                        span.special {
+                        color: orange;
+                        font-weight: bold;
+                        }
+                    </code>
+                </pre>
+                <p>
+                    As you can imagine, some classes might be applied to many elements and you don't want to have to
+                    keep editing your CSS every time something new needs to take on that style. Therefore it is
+                    sometimes best to bypass the element and refer to the class, unless you know that you want to create
+                    some special rules for one element alone, and perhaps want to make sure they are not applied to
+                    other things.
+                </p>
+            </section>
     </main>
 </body>
 <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
